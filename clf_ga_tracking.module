@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Google Analytics CLF Search Event Tracking.
+ *
+ */
+
+/**
+ * Implements hook_google_analytics_et_api().
+ */
+function clf_ga_tracking_google_analytics_et_api() {
+  return _clf_ga_tracking_google_set_selectors_array();
+}
+
+/**
+ * Internal function returns the selectors array.
+ */
+function _clf_ga_tracking_google_set_selectors_array() {
+  $selectors = array();
+  
+  $selectors = array(
+    array(
+      'event' => 'submit',
+      'selector' => '.form-search',
+      'category' => 'CLF search',
+      'action' => 'enter',
+      'label' => '%searchterm',
+      'value' => 0,
+      'noninteraction' => true,
+      'tokens' => array(
+        '%searchterm' => array(
+          'selector' => '.form-search .input-xlarge.search-query',
+          'method' => 'val',
+        ),
+      ),
+    ),
+  );
+
+  return $selectors;
+}
