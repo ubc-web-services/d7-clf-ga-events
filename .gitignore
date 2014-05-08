@@ -4,7 +4,11 @@
 */*.jpg
 */*.png
 */*.gif
+*.jpg
+*.png
+*.gif
+
 
 # pdf
 */*.pdf
-
+*.pdf
