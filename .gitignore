@@ -1,0 +1,10 @@
+### generic gitignore for features and modules
+
+# All image files
+*/*.jpg
+*/*.png
+*/*.gif
+
+# pdf
+*/*.pdf
+
